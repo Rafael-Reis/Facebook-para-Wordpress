@@ -1,50 +1,42 @@
 <?php defined("ABSPATH") or die("No direct script access allowed!");
 
-add_action('widgets_init','registrarWidgetLikeBox');
-function registrarWidgetLikeBox() {
-    return register_widget('widgetLikeBox');
+add_action('widgets_init','registrarwidget_likebox');
+function registrarwidget_likebox() {
+    return register_widget('widget_LikeBox');
 }
 
-class widgetLikeBox extends WP_Widget {
+class widget_LikeBox extends WP_Widget {
 
     public function __construct() {
         parent::__construct(false,'Facebook Like Box',array(
-                'description' => 'permite incorporar e promover facilmente qualquer Página do Facebook no seu site.'
-            ));
+            'description' => 'permite incorporar e promover facilmente qualquer Página do Facebook no seu site.'
+        ));
     }
 
     public function widget($argumentos, $instancia) {
         extract($argumentos);
         $title  = strip_tags($instancia['title']);
         
-        $parametros = new Parametros();
-        $dados = $parametros->getParametros();
-        
         echo $before_widget;
     ?>
     <div>
-        <?php if(!empty($title)){ ?>
-        <h3>
-            <?php echo $title; ?>
-        </h3>
-        <?php } ?>
+        <?= !empty($title) ? '<h2>'.$title.'</h2>' : ''; ?>
         
         <div class="fb-page" 
-             data-href="<?php echo !empty($dados->url_pagina_facebook) ?$dados->url_pagina_facebook:'https://www.facebook.com/facebook'; ?>" 
-             data-small-header="<?php echo $dados->cabecalho_likebox_facebook; ?>" 
-             <?php if ($dados->reponsivo_likebox_facebook == "true") { ?>
-                 data-adapt-container-width="<?php echo $dados->reponsivo_likebox_facebook; ?>" 
-             <?php } else { ?>
-                 data-width="<?php echo $dados->largura_likebox_facebook; ?>"
-                 data-height="<?php echo $dados->altura_likebox_facebook; ?>"
-             <?php } ?>
-             data-hide-cover="<?php echo $dados->capa_likebox_facebook; ?>" 
-             data-show-facepile="<?php echo $dados->faces_likebox_facebook; ?>"
-            >
-            <blockquote cite="https://www.facebook.com/facebook" class="fb-xfbml-parse-ignore">
-                <a href="https://www.facebook.com/facebook">Facebook</a>
-            </blockquote>
-        </div>
+            data-href="<?= !empty(rr_option_url_pagina()) ? rr_option_url_pagina():'https://www.facebook.com/facebook'; ?>" 
+            data-small-header="<?= rr_option_cabecalho_likebox();?>" 
+            <?php if(rr_option_reponsivo_likebox()=="true"){?>
+            data-adapt-container-width="<?= rr_option_reponsivo_likebox();?>" 
+            <?php }else{?>
+            data-width="<?= rr_option_largura_likebox(); ?>"
+            data-height="<?=rr_option_altura_likebox(); ?>"
+            <?php } ?>
+            data-hide-cover="<?= rr_option_capa_likebox();?>" 
+            data-show-facepile="<?= rr_option_faces_likebox();?>">
+           <blockquote cite="https://www.facebook.com/facebook" class="fb-xfbml-parse-ignore">
+               <a href="https://www.facebook.com/facebook">Facebook</a>
+           </blockquote>
+       </div>
     </div>
     <?php    
         echo $after_widget;
@@ -60,9 +52,9 @@ class widgetLikeBox extends WP_Widget {
         $title = isset($instancia['title'])?esc_attr($instancia['title']):'';
     ?>
         <p>
-            <label for="<?php echo $this->get_field_id('title'); ?>">
+            <label for="<?= $this->get_field_id('title'); ?>">
                 Titulo:
-                <input type="text" id="<?php echo $this->get_field_id('title'); ?>" name="<?php echo $this->get_field_name('title'); ?>" class="widefat" value="<?php echo $title; ?>"/> <?php _e('Exibe o Titulo do Widget'); ?>
+                <input type="text" id="<?= $this->get_field_id('title'); ?>" name="<?= $this->get_field_name('title'); ?>" class="widefat" value="<?= $title; ?>"/> <?php _e('Exibe o Titulo do Widget'); ?>
             </label>
         </p>   
     <?php

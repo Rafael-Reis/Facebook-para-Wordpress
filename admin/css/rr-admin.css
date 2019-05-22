@@ -1,0 +1,48 @@
+#navbar-rr {
+    height: auto;
+    border-bottom: solid 1px #BBB;
+}
+#navbar-rr ul{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+#navbar-rr li{
+    display: inline;
+    padding: 0;
+    margin: 0;
+}
+#navbar-rr a{
+    display: inline-block;
+    text-decoration: none;
+    padding: 10px;
+    border: solid 1px #BBB;
+    border-bottom: 0;
+    font-size: 16px;
+    margin-right:5px;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+    background: #f9f9f9;
+    color: #0073aa;
+}
+#navbar-rr a:hover{
+    background: #f2f2f2;
+}
+#navbar-rr .rr-active, #navbar-rr .rr-active:hover{
+    background: #0073aa;
+    color: #FFF;
+    border-color:transparent;
+}
+#rr-content{
+    margin-top: 25px;
+    clear: both;
+}
+.rr-form label{
+    font-size: 16px;
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+}
+.rr-input{
+    height: 38px !important;
+}

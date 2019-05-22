@@ -1,11 +1,11 @@
 <?php defined("ABSPATH") or die("No direct script access allowed!");
 
-add_action('widgets_init','registrarWidgetComentarios');
-function registrarWidgetComentarios() {
-    return register_widget('WidgetComentarios');
+add_action('widgets_init','registrar_widget_comentarios');
+function registrar_widget_comentarios() {
+    return register_widget('Widget_Comentarios');
 }
 
-class WidgetComentarios extends WP_Widget {
+class Widget_Comentarios extends WP_Widget {
 
     public function __construct() {
         parent::__construct(false,'Comentários do Facebook',array(
@@ -17,20 +17,17 @@ class WidgetComentarios extends WP_Widget {
         extract($argumentos);
         $title  = strip_tags($instancia['title']);
         
-        $parametros = new Parametros();
-        $dados = $parametros->getParametros();
+       
         
-        if ($dados->ativar_comentarios_facebook == "true"){
+        if (rr_option_ativar_comentarios() == "true"){
             echo $before_widget;
         
     ?>
 
     <!--HTML-->
-    <h3 class="page-header text-primary">
-        <?php echo $title?>
-    </h3>
+    <?= !empty($title) ? '<h2>'.$title.'</h2>' : ''; ?>
     <div class="fb-comments" 
-         data-href="<?php echo get_permalink();  ?>" 
+         data-href="<?= get_permalink();  ?>" 
          data-width="auto" 
          data-numposts="10"
          data-colorscheme="light">

@@ -1,11 +1,11 @@
 <?php defined("ABSPATH") or die("No direct script access allowed!");
 
-add_action('widgets_init','registrarWidgetBotaoCurtir');
-function registrarWidgetBotaoCurtir() {
-    return register_widget('widgetBotaoCurtir');
+add_action('widgets_init','registrar_widget_botao_curtir');
+function registrar_widget_botao_curtir() {
+    return register_widget('widget_Botao_Curtir');
 }
 
-class widgetBotaoCurtir extends WP_Widget {
+class widget_Botao_Curtir extends WP_Widget {
 
     public function __construct() {
         parent::__construct(false,'Botão Curtir',array(
@@ -15,13 +15,9 @@ class widgetBotaoCurtir extends WP_Widget {
 
     public function widget($argumentos, $instancia) {
         extract($argumentos);
-        $title  = strip_tags($instancia['title']);
-        
-        $parametros = new Parametros();
-        $dados = $parametros->getParametros();
+        $title  = strip_tags($instancia['title']);         
         
         echo $before_widget;
-        
         
     ?>
         
@@ -29,11 +25,11 @@ class widgetBotaoCurtir extends WP_Widget {
             <?php if(is_single()){?>
              data-href="<?php the_permalink()?>" 
             <?php }else{?>
-            data-href="<?php echo $dados->url_pagina_facebook;?>" 
+            data-href="<?= rr_option_url_pagina();?>" 
             <?php }?>
-            data-layout="<?php echo $dados->layout_botao_facebook;?>" 
-            data-action="<?php echo $dados->acao_botao_facebook;?>" 
-            data-size="<?php echo $dados->tamanho_botao_facebook;?>" 
+            data-layout="<?= rr_option_layout_botao();?>" 
+            data-action="<?= rr_option_acao_botao();?>" 
+            data-size="<?= rr_option_tamanho_botao();?>" 
             data-show-faces="true" 
             data-share="true">
         </div>
@@ -52,9 +48,9 @@ class widgetBotaoCurtir extends WP_Widget {
         $title = isset($instancia['title'])?esc_attr($instancia['title']):'';
     ?>
         <p>
-            <label for="<?php echo $this->get_field_id('title'); ?>">
+            <label for="<?= $this->get_field_id('title'); ?>">
                 Titulo:
-                <input type="text" id="<?php echo $this->get_field_id('title'); ?>" name="<?php echo $this->get_field_name('title'); ?>" class="widefat" value="<?php echo $title; ?>"/> <?php _e('Exibe o Titulo do Widget'); ?>
+                <input type="text" id="<?= $this->get_field_id('title'); ?>" name="<?= $this->get_field_name('title'); ?>" class="widefat" value="<?= $title; ?>"/> <?php _e('Exibe o Titulo do Widget'); ?>
             </label>
         </p>   
     <?php
