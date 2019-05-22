@@ -24,5 +24,3 @@ require plugin_dir_path(__FILE__) . 'includes/options.php';
 require plugin_dir_path(__FILE__) . 'public/class-widget-botoes.php';
 require plugin_dir_path(__FILE__) . 'public/class-widget-comentarios.php';
 require plugin_dir_path(__FILE__) . 'public/class-widget-likebox.php';
-
-

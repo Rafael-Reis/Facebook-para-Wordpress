@@ -19,7 +19,7 @@
         <tbody>
             <tr valign="top">
                 <th scope="row">
-                    Preview
+                    <?= _e("Preview", "rr_fb") ?>
                 </th>
                 <td>
                     <div class="fb-page" 
@@ -34,7 +34,7 @@
                          data-hide-cover="<?= rr_option_capa_likebox();?>" 
                          data-show-facepile="<?= rr_option_faces_likebox();?>">
                         <blockquote cite="https://www.facebook.com/facebook" class="fb-xfbml-parse-ignore">
-                            <a href="https://www.facebook.com/facebook">Facebook</a>
+                            <a href="https://www.facebook.com/facebook"><?= _e("Facebook", "rr_fb") ?></a>
                         </blockquote>
                     </div>
                 </td>
@@ -42,67 +42,83 @@
 
             <tr valign="top">
                 <th scope="row">
-                    Largura (px)
+                    <?= _e("Largura (px)", "rr_fb") ?>
                 </th>
                 <td>
-                    <input class="fb-input rr-input" type="number" name="largura_likebox" value="<?= rr_option_largura_likebox(); ?>" <?=(rr_option_reponsivo_likebox()=="true")?'disabled="disabled"':'';?> placeholder="Largura do pixel do elemento integrado (mínimo 180, máximo de 500)"/>
+                    <input class="fb-input rr-input" type="number" name="largura_likebox" value="<?= rr_option_largura_likebox(); ?>" <?=(rr_option_reponsivo_likebox()=="true")?'disabled="disabled"':'';?> placeholder="<?= _e("Largura do pixel do elemento integrado (mínimo 180, máximo de 500)", "rr_fb") ?>"/>
                 </td>
             </tr>
 
             <tr valign="top">
                 <th scope="row">
-                    Altura (px)
+                    <?= _e("Altura (px)", "rr_fb") ?>
                 </th>
                 <td>
-                    <input class="fb-input rr-input" type="number" name="altura_likebox"  value="<?=rr_option_altura_likebox()?>" <?=(rr_option_reponsivo_likebox()=="true")?'disabled="disabled"':'';?> placeholder="Altura do pixel do elemento integrado (mínimo 70)"/>
+                    <input class="fb-input rr-input" type="number" name="altura_likebox"  value="<?=rr_option_altura_likebox()?>" <?=(rr_option_reponsivo_likebox()=="true")?'disabled="disabled"':'';?> placeholder="<?= _e("Altura do pixel do elemento integrado (mínimo 70)", "rr_fb") ?>"/>
                 </td>
             </tr>
 
             <tr valign="top">
                 <th scope="row">
-                    Adaptar o tamanho automaticamente(recomendado)
+                    <?= _e("Adaptar o tamanho automaticamente(recomendado)", "rr_fb") ?>
                 </th>
                 <td>
                     <select id="numposts" name="reponsivo_likebox"  class="fb-input rr-input">
-                        <option value="true" <?=(rr_option_reponsivo_likebox()=="true")?'selected="selected"':''; ?>>Sim</option>
-                        <option value="false" <?=(rr_option_reponsivo_likebox()=="false")?'selected="selected"':''; ?>>Nao</option>
+                        <option value="true" <?=(rr_option_reponsivo_likebox()=="true")?'selected="selected"':''; ?>>
+                            <?= _e("Sim", "rr_fb") ?>
+                        </option>
+                        <option value="false" <?=(rr_option_reponsivo_likebox()=="false")?'selected="selected"':''; ?>>
+                            <?= _e("Não", "rr_fb") ?>
+                        </option>
                     </select>
                 </td>
             </tr>
 
             <tr valign="top">
                 <th scope="row">
-                    Usar cabeçalho pequeno
+                    <?= _e("Usar cabeçalho pequeno", "rr_fb") ?>
                 </th>
 
                 <td>
                     <select id="numposts" name="cabecalho_likebox"  class="fb-input rr-input">
-                        <option value="true" <?= (rr_option_cabecalho_likebox()=="true")?'selected="selected"':''; ?>>Sim</option>
-                        <option value="false" <?= (rr_option_cabecalho_likebox()=="false")?'selected="selected"':''; ?>>Nao</option>
+                        <option value="true" <?= (rr_option_cabecalho_likebox()=="true")?'selected="selected"':''; ?>>
+                            <?= _e("Sim", "rr_fb") ?>
+                        </option>
+                        <option value="false" <?= (rr_option_cabecalho_likebox()=="false")?'selected="selected"':''; ?>>
+                            <?= _e("Não", "rr_fb") ?>
+                        </option>
                     </select>
                 </td>
             </tr>
 
             <tr valign="top">
                 <th scope="row">
-                    Ocultar foto de capa
+                    <?= _e("Ocultar foto de capa", "rr_fb") ?>
                 </th>
                 <td>
                     <select id="numposts" name="capa_likebox"  class="fb-input rr-input">
-                        <option value="true" <?= (rr_option_capa_likebox()=="true")?'selected="selected"':''; ?>>Sim</option>
-                        <option value="false" <?= (rr_option_capa_likebox()=="false")?'selected="selected"':''; ?>>Nao</option>
+                        <option value="true" <?= (rr_option_capa_likebox()=="true")?'selected="selected"':''; ?>>
+                            <?= _e("Sim", "rr_fb") ?>
+                        </option>
+                        <option value="false" <?= (rr_option_capa_likebox()=="false")?'selected="selected"':''; ?>>
+                            <?= _e("Não", "rr_fb") ?>
+                        </option>
                     </select>
                 </td>
             </tr>
 
             <tr valign="top">
                 <th scope="row">
-                    Mostrar rostos dos amigos
+                    <?= _e("Mostrar rostos dos amigos", "rr_fb") ?>
                 </th>
                 <td>
                     <select id="numposts" name="faces_likebox"   class="fb-input rr-input">
-                        <option value="true" <?= (rr_option_faces_likebox()=="true")?'selected="selected"':''; ?>>Sim</option>
-                        <option value="false" <?= (rr_option_faces_likebox()=="false")?'selected="selected"':''; ?>>Nao</option>
+                        <option value="true" <?= (rr_option_faces_likebox()=="true")?'selected="selected"':''; ?>>
+                            <?= _e("Sim", "rr_fb") ?>
+                        </option>
+                        <option value="false" <?= (rr_option_faces_likebox()=="false")?'selected="selected"':''; ?>>
+                            <?= _e("Não", "rr_fb") ?>
+                        </option>
                     </select>
                 </td>
             </tr>

@@ -1,5 +1,7 @@
  <div class="wrap">
-    <h1 style="margin-bottom: 10px;"><?=__('Social Plugins Facebook','rr_fb')?></h1>
+    <h1 style="margin-bottom: 10px;">
+        <?=_e('Social Plugins Facebook','rr_fb')?>
+    </h1>
     
     <div class="wrap">
         <nav id="navbar-rr">

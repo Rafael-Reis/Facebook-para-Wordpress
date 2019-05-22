@@ -16,7 +16,7 @@
         <tbody>
             <tr valign="top">
                 <th scope="row">
-                    Preview
+                    <?= _e("Preview", "rr_fb") ?>
                 </th>
                 <td>
                     <div class="fb-like" 
@@ -31,36 +31,44 @@
             </tr>
             <tr valign="top">
                 <th scope="row">
-                    Layout
+                    <?= _e("Layout", "rr_fb") ?>
                 </th>
                 <td>
                     <select name="layout_botao" class="fb-input rr-input small-text">
-                        <option value="standard"     <?= (rr_option_layout_botao() == "standard") ? 'selected="selected"' : ''; ?>>padrão</option>
-                        <option value="button_count" <?= (rr_option_layout_botao() == "button_count") ? 'selected="selected"' : ''; ?>>botão contador</option>
-                        <option value="button"       <?= (rr_option_layout_botao() == "button") ? 'selected="selected"' : ''; ?>>botão</option>
+                        <option value="standard"     <?= (rr_option_layout_botao() == "standard") ? 'selected="selected"' : ''; ?>><?= _e("padrão", "rr_fb") ?></option>
+                        <option value="button_count" <?= (rr_option_layout_botao() == "button_count") ? 'selected="selected"' : ''; ?>><?= _e("botão contador", "rr_fb") ?></option>
+                        <option value="button"       <?= (rr_option_layout_botao() == "button") ? 'selected="selected"' : ''; ?>><?= _e("botão", "rr_fb") ?></option>
                     </select>
 
                 </td>
             </tr>
             <tr valign="top">
                 <th scope="row">
-                    Tipo de ação
+                    <?= _e("Tipo de ação", "rr_fb") ?>
                 </th>
                 <td>
                     <select name="acao_botao" class="fb-input rr-input small-text">
-                        <option value="like"      <?= (rr_option_acao_botao() == "like") ? 'selected="selected"' : ''; ?>>Cutir</option>
-                        <option value="recommend" <?= (rr_option_acao_botao() == "recommend") ? 'selected="selected"' : ''; ?>>Recomendar</option>
+                        <option value="like" <?= (rr_option_acao_botao() == "like") ? 'selected="selected"' : ''; ?>>
+                            <?= _e("Cutir", "rr_fb") ?>
+                        </option>
+                        <option value="recommend" <?= (rr_option_acao_botao() == "recommend") ? 'selected="selected"' : ''; ?>>
+                            <?= _e("Recomendar", "rr_fb") ?>
+                        </option>
                     </select>
                 </td>
             </tr>
             <tr valign="top">
                 <th scope="row">
-                    Tamanho do botão
+                    <?= _e("Tamanho do botão", "rr_fb") ?>
                 </th>
                 <td>
                     <select name="tamanho_botao" class="fb-input rr-input small-text">
-                        <option value="small" <?= (rr_option_tamanho_botao() == "small") ? 'selected="selected"' : ''; ?>>pequeno</option>
-                        <option value="large" <?= (rr_option_tamanho_botao() == "large") ? 'selected="selected"' : ''; ?>>grande</option>
+                        <option value="small" <?= (rr_option_tamanho_botao() == "small") ? 'selected="selected"' : ''; ?>>
+                            <?= _e("pequeno", "rr_fb") ?>
+                        </option>
+                        <option value="large" <?= (rr_option_tamanho_botao() == "large") ? 'selected="selected"' : ''; ?>>
+                            <?= _e("grande", "rr_fb") ?>
+                        </option>
                     </select>
                 </td>
             </tr>

@@ -11,19 +11,23 @@
         <tbody>
             <tr valign="top">
                 <th scope="row">
-                    Ativar Comentarios
+                    <?= _e("Ativar Comentarios", "rr_fb") ?>
                 </th>
                 <td>
                     <select name="ativar_comentarios" class="fb-input rr-input rr-input small-text">
-                        <option value="true" <?= (rr_option_ativar_comentarios() == "true")?'selected="selected"':''; ?>>Sim</option>
-                        <option value="false"<?= (rr_option_ativar_comentarios() =="false")?'selected="selected"':''; ?>>Nao</option>
+                        <option value="true" <?= (rr_option_ativar_comentarios() == "true")?'selected="selected"':''; ?>>
+                            <?= _e("Sim", "rr_fb") ?>
+                        </option>
+                        <option value="false"<?= (rr_option_ativar_comentarios() =="false")?'selected="selected"':''; ?>>
+                            <?= _e("Não", "rr_fb") ?>
+                        </option>
                     </select>
                  </td>
             </tr>
             
             <tr valign="top">
                 <th scope="row">
-                    Número de comentários por página
+                    <?= _e("Número de comentários por página", "rr_fb") ?>
                 </th>
                 <td>
                     <select name="num_comentarios" class="fb-input rr-input rr-input small-text">
