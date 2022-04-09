@@ -20,7 +20,9 @@ class widget_LikeBox extends WP_Widget {
         echo $before_widget;
     ?>
     <div>
-        <?= !empty($title) ? '<h2>'.$title.'</h2>' : ''; ?>
+
+
+        <?= !empty($title) ? $before_title.$title.$after_title : ''; ?>
         
         <div class="fb-page" 
             data-href="<?= !empty(rr_option_url_pagina()) ? rr_option_url_pagina():'https://www.facebook.com/facebook'; ?>" 

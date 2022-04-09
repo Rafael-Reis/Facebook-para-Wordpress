@@ -24,8 +24,7 @@ class Widget_Comentarios extends WP_Widget {
         
     ?>
 
-    <!--HTML-->
-    <?= !empty($title) ? '<h2>'.$title.'</h2>' : ''; ?>
+    <?= !empty($title) ? $before_title.$title.$after_title : ''; ?>
     <div class="fb-comments" 
          data-href="<?= get_permalink();  ?>" 
          data-width="auto" 

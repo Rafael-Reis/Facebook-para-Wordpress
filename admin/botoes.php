@@ -1,13 +1,11 @@
 <?php
 
-    if(isset($_POST)){
+    if(isset($_POST['layout_botao']) && isset($_POST['acao_botao']) && $_POST['tamanho_botao']){
       rr_option_layout_botao(sanitize_text_field($_POST['layout_botao'])); 
       rr_option_acao_botao(sanitize_text_field($_POST['acao_botao'])); 
       rr_option_tamanho_botao(sanitize_text_field($_POST['tamanho_botao'])); 
     }
-   
-    
-    echo get_custom_logo();
+  
     
     
 ?>

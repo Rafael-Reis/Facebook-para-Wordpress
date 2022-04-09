@@ -2,7 +2,7 @@
 
 /*
  * Plugin Name: Facebook Plugin
- * Plugin URI:  
+ * Plugin URI: https://github.com/Rafael-Reis/facebook-plugin-rr
  * Description: Plugin de Integração de plugins do Facebook com themas do Wordpress, Ex: like box, comentários, botão curtir, botão compartilar etc.
  * Version:     1.0
  * Author:      rafaelreis.eti.br
@@ -12,6 +12,9 @@
  * Text Domain: rr_fb
 */
 
+if ( ! defined( 'ABSPATH' ) ) {
+	die( 'Invalid request.' );
+}
 
 define('RR_PLUGIN', plugin_basename(__FILE__));
 define('RR_PLUGIN_PATH', plugin_dir_path(__FILE__));

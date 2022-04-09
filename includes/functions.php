@@ -61,16 +61,7 @@ function rr_load_tab_view($tab){
 
 //Load Facebook SDK for JavaScript
 function rr_facebook_sdk(){
-    echo '<div id="fb-root"></div>
-        <script>
-            (function(d, s, id) {
-              var js, fjs = d.getElementsByTagName(s)[0];
-              if (d.getElementById(id)) return;
-              js = d.createElement(s); js.id = id;
-              js.src = "https://connect.facebook.net/pt-BR/sdk.js#xfbml=1&version=v2.5";
-              fjs.parentNode.insertBefore(js, fjs);
-            }(document, "script", "facebook-jssdk"));
-        </script>';
+    echo '<div id="fb-root"></div><script async defer crossorigin="anonymous" src="https://connect.facebook.net/pt_BR/sdk.js#xfbml=1&version=v5.0"></script>';
 }
 add_action('wp_footer', 'rr_facebook_sdk');
 
@@ -79,9 +70,14 @@ function rr_facebook_metatag(){
     $meta .= '<meta property="og:type"          content="website" />';
     $meta .= '<meta property="og:title"         content="' . get_bloginfo('title') . '" />';
     $meta .= '<meta property="og:description"   content="' . get_bloginfo('description') . '" />';
-    $meta .= '<meta property="og:image"         content=" '. get_custom_logo() . '" />';
+    $meta .= '<meta property="og:image"         content="' . get_url_logo(). '" />';
     
     echo $meta;
 }
 add_action('wp_head', 'rr_facebook_metatag');
+
+function get_url_logo() {
+	$image = wp_get_attachment_image_src( get_theme_mod( 'custom_logo' ), 'full' );
+	return is_array($image) && !empty($image[0]) ? $image[0] : '';
+}
 

@@ -1,6 +1,15 @@
 <?php
 
-    if(isset($_POST)){
+    if( isset($_POST['layout_botao'])  
+        && isset($_POST['acao_botao']) 
+        && isset($_POST['tamanho_botao'])
+        && isset($_POST['largura_likebox'])
+        && isset($_POST['altura_likebox'])
+        && isset($_POST['reponsivo_likebox'])
+        && isset($_POST['cabecalho_likebox'])
+        && isset($_POST['capa_likebox'])
+        && isset($_POST['faces_likebox'])
+    ){
       rr_option_layout_botao(sanitize_text_field($_POST['layout_botao'])); 
       rr_option_acao_botao(sanitize_text_field($_POST['acao_botao'])); 
       rr_option_tamanho_botao(sanitize_text_field($_POST['tamanho_botao'])); 

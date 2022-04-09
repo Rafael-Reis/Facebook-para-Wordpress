@@ -1,6 +1,6 @@
 <?php
 
-    if(isset($_POST)){
+    if(isset($_POST['ativar_comentarios']) && isset($_POST['num_comentarios'])){
       rr_option_ativar_comentarios(sanitize_text_field($_POST['ativar_comentarios'])); 
       rr_option_num_comentarios(sanitize_text_field($_POST['num_comentarios']));
     }
