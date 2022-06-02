@@ -6,5 +6,5 @@ if(!defined('WP_UNINSTALL_PLUGIN')) {
 }
 
 //Remove Options
-delete_option(RR_Option::KEY_OPTION);
+delete_option(RR_PREFIX);
 

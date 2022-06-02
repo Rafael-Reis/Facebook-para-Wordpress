@@ -1,6 +1,6 @@
  <div class="wrap">
     <h1 style="margin-bottom: 10px;">
-        <?=_e('Social Plugins Facebook','rr_fb')?>
+        <?=_e('Social Plugins para o Facebook','rr_fb')?>
     </h1>
     
     <div class="wrap">
