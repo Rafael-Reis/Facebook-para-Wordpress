@@ -1,13 +1,3 @@
-<?php
-    
-    if(isset($_POST)){
-      RR_Option::get_instance()->set_values($_POST);
-    }
-    
-    $data = RR_Option::get_instance()->get_values();
-
-?>
-
 <form action="" class="rr-form" method="post">
     <table class="form-table">
         <tbody>
