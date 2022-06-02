@@ -1,9 +1,10 @@
 <?php
 
-    if(isset($_POST['ativar_comentarios']) && isset($_POST['num_comentarios'])){
-      rr_option_ativar_comentarios(sanitize_text_field($_POST['ativar_comentarios'])); 
-      rr_option_num_comentarios(sanitize_text_field($_POST['num_comentarios']));
+    if(isset($_POST)){
+      RR_Option::get_instance()->set_values($_POST);
     }
+    
+    $data = RR_Option::get_instance()->get_values();
    
 ?>
 <form action="" method="post">
@@ -15,10 +16,10 @@
                 </th>
                 <td>
                     <select name="ativar_comentarios" class="fb-input rr-input rr-input small-text">
-                        <option value="true" <?= (rr_option_ativar_comentarios() == "true")?'selected="selected"':''; ?>>
+                        <option value="true" <?= ($data['ativar_comentarios'] == "true")?'selected="selected"':''; ?>>
                             <?= _e("Sim", "rr_fb") ?>
                         </option>
-                        <option value="false"<?= (rr_option_ativar_comentarios() =="false")?'selected="selected"':''; ?>>
+                        <option value="false" <?= ($data['ativar_comentarios'] == "false")?'selected="selected"':''; ?>>
                             <?= _e("Não", "rr_fb") ?>
                         </option>
                     </select>
@@ -35,7 +36,7 @@
                            for($i=1; $i<=10;$i++){
                            $cont = $i*5
                        ?>
-                        <option value="<?= $cont; ?>" <?= (rr_option_num_comentarios()==$cont)?'selected="selected"':''; ?>>
+                        <option value="<?= $cont; ?>" <?= ($data['num_comentarios']==$cont)?'selected="selected"':''; ?>>
                             <?=  $cont; ?>
                         </option>
                        <?php } ?>

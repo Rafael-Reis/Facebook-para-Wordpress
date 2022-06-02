@@ -15,21 +15,21 @@ class widget_Botao_Curtir extends WP_Widget {
 
     public function widget($argumentos, $instancia) {
         extract($argumentos);
-        $title  = strip_tags($instancia['title']);         
+        $title = strip_tags($instancia['title']);         
+        $data = RR_Option::get_instance()->get_values();
         
         echo $before_widget;
-        
     ?>
         
         <div class="fb-like" 
             <?php if(is_single()){?>
              data-href="<?php the_permalink()?>" 
             <?php }else{?>
-            data-href="<?= rr_option_url_pagina();?>" 
+            data-href="<?= $data['url_pagina']?>" 
             <?php }?>
-            data-layout="<?= rr_option_layout_botao();?>" 
-            data-action="<?= rr_option_acao_botao();?>" 
-            data-size="<?= rr_option_tamanho_botao();?>" 
+            data-layout="<?= $data['layout_botao'] ?>" 
+            data-action="<?= $data['acao_botao'] ?>" 
+            data-size="<?= $data['tamanho_botao'] ?>" 
             data-show-faces="true" 
             data-share="true">
         </div>
@@ -50,7 +50,11 @@ class widget_Botao_Curtir extends WP_Widget {
         <p>
             <label for="<?= $this->get_field_id('title'); ?>">
                 Titulo:
-                <input type="text" id="<?= $this->get_field_id('title'); ?>" name="<?= $this->get_field_name('title'); ?>" class="widefat" value="<?= $title; ?>"/> <?php _e('Exibe o Titulo do Widget'); ?>
+                <input type="text" 
+                       id="<?= $this->get_field_id('title'); ?>" 
+                       name="<?= $this->get_field_name('title'); ?>" 
+                       class="widefat" value="<?= $title; ?>"/> 
+                <?php _e('Exibe o Titulo do Widget'); ?>
             </label>
         </p>   
     <?php

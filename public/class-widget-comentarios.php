@@ -16,10 +16,10 @@ class Widget_Comentarios extends WP_Widget {
     public function widget($argumentos, $instancia) {
         extract($argumentos);
         $title  = strip_tags($instancia['title']);
-        
+        $data = RR_Option::get_instance()->get_values();
        
         
-        if (rr_option_ativar_comentarios() == "true"){
+        if ($data['ativar_comentarios'] == "true"){
             echo $before_widget;
         
     ?>
@@ -50,7 +50,12 @@ class Widget_Comentarios extends WP_Widget {
         <p>
             <label for="<?php echo $this->get_field_id('title'); ?>">
                 Titulo:
-                <input type="text" id="<?php echo $this->get_field_id('title'); ?>" name="<?php echo $this->get_field_name('title'); ?>" class="widefat" value="<?php echo $title; ?>"/> <?php _e('Exibe o Titulo do Widget'); ?>
+                <input 
+                    type="text" 
+                    id="<?php echo $this->get_field_id('title'); ?>" 
+                    name="<?php echo $this->get_field_name('title'); ?>" 
+                    class="widefat" value="<?php echo $title; ?>"/> 
+                    <?php _e('Exibe o Titulo do Widget'); ?>
             </label>
         </p>   
     <?php
