@@ -1,9 +1,7 @@
 <?php
 
-//load js e css
 function rr_style_scripts(){
     wp_enqueue_style( 'rr-admin-css', RR_PLUGIN_URL.'admin/css/rr-admin.css');
-   // wp_enqueue_script('rr-admin-js', RR_PLUGIN_URL.'admin/js/rr-admin.js', array( 'jquery' ) );
 }
 add_action('admin_enqueue_scripts', 'rr_style_scripts');
 
@@ -61,7 +59,10 @@ function rr_load_tab_view($tab){
 
 //Load Facebook SDK for JavaScript
 function rr_facebook_sdk(){
-    echo '<div id="fb-root"></div><script async defer crossorigin="anonymous" src="https://connect.facebook.net/pt_BR/sdk.js#xfbml=1&version=v5.0"></script>';
+    echo '<div id="fb-root"></div>'
+        . '<script async defer crossorigin="anonymous" '
+        . 'src="https://connect.facebook.net/pt_BR/sdk.js#xfbml=1&version=v5.0">'
+        . '</script>';
 }
 add_action('wp_footer', 'rr_facebook_sdk');
 
