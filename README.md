@@ -1,16 +1,12 @@
 # Facebook Plugin para WordPress
 Plugin WordPress para integrar plugins sociais do Facebook com sites ou blogs.
 
-Capturas 
+### Plugins supportados:
+- Botões
+- Like Box
+- Comentários
 
-1. Geral
+### Tela do Plugin 
 ![alt text](https://github.com/rafaelreis96/facebook-plugin-rr/blob/master/screenshots/geral.png)
 
-2. Botões
-![alt text](https://github.com/rafaelreis96/facebook-plugin-rr/blob/master/screenshots/botoes.png)
-
-1. Like Box
-![alt text](https://github.com/rafaelreis96/facebook-plugin-rr/blob/master/screenshots/likebox.png)
-
-1. Comentários
-![alt text](https://github.com/rafaelreis96/facebook-plugin-rr/blob/master/screenshots/comentarios.png)
+ 
